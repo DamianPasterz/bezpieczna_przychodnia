@@ -1,0 +1,266 @@
+/* Global Settings */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+:root {
+    --blue: #1C56AA;
+    --orange: #FD904D;
+}
+
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Nav Styling */
+
+.logo {
+    width: 6.5em;
+    height: 6.5em;
+    border-radius: 100%;
+    position: relative;
+    background-color: #FD904D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+
+
+
+}
+
+.logo_center {
+    width: 3.5em;
+    height: 3.5em;
+    background-color: #F6EDE0;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    /* transform: translateX(1.5em) translateY(1.5em); */
+    transition: .9s ease-in-out;
+    z-index: 10;
+}
+
+
+
+
+
+
+.logo_left {
+    background: var(--orange);
+    height: 3.5em;
+    width: 0.5em;
+    position: relative;
+    justify-self: center;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translateX(-1.5em);
+    z-index: 200;
+}
+
+
+.logo_right {
+    background: var(--orange);
+    height: 3.5em;
+    width: 0.5em;
+    position: relative;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+
+    transform: translateX(1.5em) rotate(180deg);
+    ;
+    z-index: 100;
+}
+
+
+
+
+.logo_up {
+    background: var(--orange);
+    height: 3.5em;
+    width: 0.5em;
+    position: relative;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+
+    transform: translateX(0.8em) translateY(-1.8em) rotate(90deg);
+    ;
+    z-index: 100;
+}
+
+
+.logo_down {
+    background: var(--orange);
+    height: 3.5em;
+    width: 0.5em;
+    position: relative;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+
+    transform: translateX(-0.8em) translateY(1.8em) rotate(-90deg);
+    ;
+    z-index: 100;
+}
+
+nav {
+    background-color: #F6EDE0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 6.5em;
+    padding: 2em;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    position: relative;
+    padding: .2em;
+    color: var(--blue);
+    font-weight: bolder
+}
+
+.company {
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    position: relative;
+    padding: .2em;
+    color: var(--blue);
+
+}
+
+.contanier {
+    /* display: flex; */
+
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    background-color: aquamarine;
+}
+
+.contact {
+    display: flex;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    background-color: var(--orange);
+    height: .15em;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Burger Styling */
+
+.burger {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.line {
+    width: 3em;
+    height: .3em;
+    background: var(--orange);
+    margin: .7em;
+    border-radius: 20px;
+    transition: .3s ease-in-out;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    .burger {
+        display: block;
+        transition: .3s ease-in-out;
+    }
+
+    .burger.active .line:first-child {
+        transform: translateY(-300px);
+    }
+
+    .burger.active .line:nth-child(2) {
+        transform: rotate(-405deg) translateY(8px);
+    }
+
+    .burger.active .line:nth-child(3) {
+        transform: rotate(-320deg) translateY(-10px);
+    }
+
+    .logo_center {
+        display: block;
+        transition: .3s ease-in-out;
+    }
+
+
+
+
+
+    ul {
+        position: absolute;
+        right: 0;
+        top: 7em;
+        background-color: #F6EDE0;
+        height: 92vh;
+        flex-direction: column;
+        text-align: center;
+
+        transform: translate(100%);
+        transition: .3s ease-in-out;
+    }
+
+    ul.active {
+        transform: translate(0%);
+    }
+
+    a {
+        top: 1em;
+        color: var(--orange);
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+}
+
+
+@media only screen and (max-width: 760px) {
+    ul {
+        width: 100%;
+    }
+}
